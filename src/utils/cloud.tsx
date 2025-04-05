@@ -24,7 +24,7 @@ import { OAuth2AuthorizeModal, UserStore } from "@webpack/common";
 import { Logger } from "./Logger";
 import { openModal } from "./modal";
 
-export const cloudLogger = new Logger("Cloud", "#39b7e0");
+export const cloudLogger = new Logger("CloudlySwigger", "#39b7e0");
 export const getCloudUrl = () => new URL(Settings.cloud.url);
 
 const cloudUrlOrigin = () => getCloudUrl().origin;
@@ -113,13 +113,13 @@ export async function authorizeCloud() {
                     cloudLogger.info("Authorized with secret");
                     await setAuthorization(secret);
                     showNotification({
-                        title: "Cloud Integration",
-                        body: "Cloud integrations enabled!"
+                        title: "CloudlySwigger",
+                        body: "CloudlySwigger integrations enabled! Ziggy!!"
                     });
                     Settings.cloud.authenticated = true;
                 } else {
                     showNotification({
-                        title: "Cloud Integration",
+                        title: "CloudlySwigger",
                         body: "Setup failed (no secret returned?)."
                     });
                     Settings.cloud.authenticated = false;
@@ -127,7 +127,7 @@ export async function authorizeCloud() {
             } catch (e: any) {
                 cloudLogger.error("Failed to authorize", e);
                 showNotification({
-                    title: "Cloud Integration",
+                    title: "CloudlySwigger",
                     body: `Setup failed (${e.toString()}).`
                 });
                 Settings.cloud.authenticated = false;

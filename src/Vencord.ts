@@ -77,7 +77,7 @@ async function syncSettings() {
             // there was an error to notify the user, but besides that we only want to show one notification instead of all
             // of the possible ones it has (such as when your settings are newer).
             showNotification({
-                title: "Cloud Settings",
+                title: "CloudlySwigger Settings",
                 body: "Your settings have been updated! Click here to restart to fully apply changes!",
                 color: "var(--green-360)",
                 onClick: relaunch
@@ -101,7 +101,7 @@ async function init() {
                 await update();
                 if (Settings.autoUpdateNotification)
                     setTimeout(() => showNotification({
-                        title: "Vencord has been updated!",
+                        title: "MyVencord has been updated!",
                         body: "Click here to restart",
                         permanent: true,
                         noPersist: true,
@@ -111,7 +111,7 @@ async function init() {
             }
 
             setTimeout(() => showNotification({
-                title: "A Vencord update is available!",
+                title: "A MyVencord update is available!",
                 body: "Click here to view the update",
                 permanent: true,
                 noPersist: true,
