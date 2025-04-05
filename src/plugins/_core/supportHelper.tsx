@@ -44,7 +44,7 @@ import SettingsPlugin from "./settings";
 const CodeBlockRe = /```js\n(.+?)```/s;
 
 const AdditionalAllowedChannelIds = [
-    "1024286218801926184", // Vencord > #bot-spam
+    "1353198215238910022", // Vencord > #bot-spam
 ];
 
 const TrustedRolesIds = [
@@ -84,7 +84,7 @@ async function generateDebugInfoMessage() {
 
     const info = {
         Vencord:
-            `v${VERSION} • [${gitHash}](<https://github.com/Vendicated/Vencord/commit/${gitHash}>)` +
+            `v${VERSION} • [${gitHash}](<https://github.com/tiso99/MyVencord/commit/${gitHash}>)` +
             `${SettingsPlugin.additionalInfo} - ${Intl.DateTimeFormat("en-GB", { dateStyle: "medium" }).format(BUILD_TIMESTAMP)}`,
         Client: `${RELEASE_CHANNEL} ~ ${client}`,
         Platform: window.navigator.platform
@@ -139,7 +139,7 @@ export default definePlugin({
     name: "SupportHelper",
     required: true,
     description: "Helps us provide support to you",
-    authors: [Devs.Ven],
+    authors: [Devs.Ven, Devs.BX],
     dependencies: ["UserSettingsAPI"],
 
     settings,

@@ -46,7 +46,7 @@ async function eraseAllData() {
     if (!res.ok) {
         cloudLogger.error(`Failed to erase data, API returned ${res.status}`);
         showNotification({
-            title: "Cloud Integrations",
+            title: "CloudlySwigger Integrations",
             body: `Could not erase all data (API returned ${res.status}), please contact support.`,
             color: "var(--red-360)"
         });
@@ -57,7 +57,7 @@ async function eraseAllData() {
     await deauthorizeCloud();
 
     showNotification({
-        title: "Cloud Integrations",
+        title: "CloudlySwigger Integrations",
         body: "Successfully erased all data.",
         color: "var(--green-360)"
     });

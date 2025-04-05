@@ -32,19 +32,19 @@ https://discord.gg/D9uwnFnqmd
 
 ## Sponsors
 
-|     **Thanks a lot to all Vencord [sponsors](https://github.com/sponsors/Vendicated)!!**     |
+|     **Thanks a lot to all MyVencord [sponsors](https://github.com/sponsors/tiso99)!!**     |
 | :------------------------------------------------------------------------------------------: |
-|   [![](https://meow.vendicated.dev/sponsors.png)](https://github.com/sponsors/Vendicated)    |
-| *generated using [github-sponsor-graph](https://github.com/Vendicated/github-sponsor-graph)* |
+|   [![](https://meow.vendicated.dev/sponsors.png)](https://github.com/sponsors/tiso99)    |
+| *generated using [github-sponsor-graph](https://github.com/tiso99/github-sponsor-graph)* |
 
 
 ## Star History
 
-<a href="https://star-history.com/#Vendicated/Vencord&Timeline">
+<a href="https://star-history.com/#tiso99/MyVencord&Timeline">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Vendicated/Vencord&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Vendicated/Vencord&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Vendicated/Vencord&type=Timeline" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tiso99/MyVencord&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tiso99/MyVencord&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tiso99/MyVencord&type=Timeline" />
   </picture>
 </a>
 

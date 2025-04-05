@@ -3,7 +3,7 @@
     "minimum_chrome_version": "111",
     "name": "MyVencord Web",
     "description": "The cutest Discord mod now in your browser",
-    "author": "Vendicated",
+    "author": "tiso99",
     "homepage_url": "https://github.com/tiso99/MyVencord",
     "icons": {
         "128": "icon.png"

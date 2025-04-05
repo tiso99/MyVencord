@@ -335,7 +335,7 @@ function PatchHelper() {
     }
 
     return (
-        <SettingsTab title="Patch Helper">
+        <SettingsTab title="Patch Helperrrrrrrrrr">
             <Forms.FormTitle>full patch</Forms.FormTitle>
             <FullPatchInput
                 setFind={onFindChange}

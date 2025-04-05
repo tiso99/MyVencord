@@ -31,7 +31,7 @@ import { useAwaiter } from "@utils/react";
 import { Button, Forms, GuildMemberStore, React, Select, Switch, UserStore } from "@webpack/common";
 
 import BadgeAPI from "../../plugins/_api/badges";
-import { Flex, FolderIcon, GithubIcon, LogIcon, PaintbrushIcon, RestartIcon } from "..";
+import { Flex, FolderIcon, GithubIcon, LogIcon, PaintbrushIcon, RestartIcon, SparklesIcon } from "..";
 import { openNotificationSettingsModal } from "./NotificationSettings";
 import { QuickAction, QuickActionCard } from "./quickActions";
 import { SettingsTab, wrapTab } from "./shared";
@@ -106,6 +106,11 @@ function VencordSettings() {
                 title: "Disable minimum window size",
                 note: "Requires a full restart"
             },
+            IS_DISCORD_DESKTOP && {
+                key: "secretHere",
+                title: "Enable secret thing I think",
+                note: "Requires a full restart"
+            },
         ];
 
     return (
@@ -178,6 +183,11 @@ function VencordSettings() {
                         Icon={GithubIcon}
                         text="View Source Code"
                         action={() => VencordNative.native.openExternal("https://github.com/" + gitRemote)}
+                    />
+                    <QuickAction
+                        Icon={SparklesIcon}
+                        text="View Something Secret"
+                        action={() => VencordNative.native.openExternal("https://cdn.yxuteam.com/DpfKsKvL.mp4")}
                     />
                 </QuickActionCard>
             </Forms.FormSection>

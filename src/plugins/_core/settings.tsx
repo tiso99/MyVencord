@@ -127,7 +127,7 @@ export default definePlugin({
             },
             IS_DEV && {
                 section: "VencordPatchHelper",
-                label: "Patch Helper",
+                label: "Patch Helperrrr",
                 element: PatchHelperTab,
                 className: "vc-patch-helper"
             },

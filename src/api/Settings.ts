@@ -53,6 +53,7 @@ export interface Settings {
     | "under-page"
     | "window"
     | undefined;
+    secretHere: boolean;
     disableMinSize: boolean;
     winNativeTitleBar: boolean;
     plugins: {
@@ -89,6 +90,7 @@ const DefaultSettings: Settings = {
     transparent: false,
     winCtrlQ: false,
     macosVibrancyStyle: undefined,
+    secretHere: false,
     disableMinSize: false,
     winNativeTitleBar: false,
     plugins: {},

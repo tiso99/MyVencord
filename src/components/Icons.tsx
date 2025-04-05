@@ -421,6 +421,20 @@ export function GithubIcon(props: IconProps) {
     );
 }
 
+export function SparklesIcon(props: IconProps) {
+    return (
+        <Icon
+            {...props}
+            viewBox="0 0 24 24"
+        >
+            <path
+                fill="currentColor"
+                d="M12 2L2 22h20L12 2ZM12 12V22"
+            />
+        </Icon>
+    );
+}
+
 export function WebsiteIcon(props: IconProps) {
     return (
         <Icon
