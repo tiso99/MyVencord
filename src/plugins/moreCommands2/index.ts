@@ -17,10 +17,7 @@
 */
 
 import {
-    ApplicationCommandInputType,
     findOption,
-    sendBotMessage,
-    OptionalMessageOption,
     RequiredMessageOption
 } from "@api/Commands";
 import { Devs } from "@utils/constants";
@@ -68,7 +65,7 @@ function sarcasticText(input: string): string {
 }
 
 function emojiSpam(input: string): string {
-    const emoji = ["😂", "🔥", "💯", "😍", "😜", "🤣", "👌", "💀"];
+    const emoji = ["😂", "🔥", "💯", "😍", "😜", "🤣", "👌", "💀", "😎"];
     let output = input;
     for (let i = 0; i < 5; i++) {
         output += ` ${emoji[Math.floor(Math.random() * emoji.length)]}`;
