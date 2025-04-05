@@ -44,19 +44,27 @@ jobs:
               run: |
                   rm -rf dist/*-unpacked dist/vendor Vencord.user.css vencordDesktopRenderer.css vencordDesktopRenderer.css.map
 
-            - name: Get some values needed for the release
-              id: release_values
+            - name: Set release tag
+              run: echo "RELEASE_TAG=devbuild" >> $GITHUB_ENV
+
+            - name: Create devbuild release if it doesn't exist
+              if: github.repository == 'tiso99/MyVencord'
               run: |
-                  echo "release_tag=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+                  if ! gh release view "$RELEASE_TAG"; then
+                    gh release create "$RELEASE_TAG" --title "DevBuild" --notes "Auto-created dev build"
+                  fi
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
             - name: Upload DevBuild as release
               if: github.repository == 'tiso99/MyVencord'
               run: |
-                  gh release upload devbuild --clobber dist/*
-                  gh release edit devbuild --title "DevBuild $RELEASE_TAG"
+                  gh release upload "$RELEASE_TAG" --clobber dist/*
+                  gh release edit "$RELEASE_TAG" --title "DevBuild $RELEASE_TAG"
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  RELEASE_TAG: ${{ env.release_tag }}
+                  RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
             - name: Upload DevBuild to builds repo
               if: github.repository == 'tiso99/MyVencord'
