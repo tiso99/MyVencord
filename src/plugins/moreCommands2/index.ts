@@ -1,6 +1,6 @@
 /*
  * Vencord, a modification for Discord's desktop app
- * Copyright (c) 2022 Vendicated, BX and contributors
+ * Copyright (c) 2022 BX and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@ import {
 import { Devs } from "@utils/constants";
 import definePlugin from "@utils/types";
 
-/** Converts text to alternating case like "HeLlO wOrLd" */
 function toMockCase(input: string): string {
     return input
         .split("")
@@ -34,12 +33,10 @@ function toMockCase(input: string): string {
         .join("");
 }
 
-/** Reverses the input text */
 function reverseText(input: string): string {
     return input.split("").reverse().join("");
 }
 
-/** Makes the input text spooky */
 function spookyText(input: string): string {
     const spookyMap: Record<string, string> = {
         A: "ᗩ", B: "ᗷ", C: "ᑕ", D: "ᗪ", E: "E", F: "ᖴ", G: "G",
@@ -50,7 +47,6 @@ function spookyText(input: string): string {
     return input.toUpperCase().split("").map(c => spookyMap[c] || c).join("");
 }
 
-/** UwUify the text, making it cuter */
 function uwuifyText(input: string): string {
     return input
         .replace(/r/g, "w")
@@ -64,7 +60,6 @@ function uwuifyText(input: string): string {
         .replace(/([^\w\s])\1+/g, "$1");
 }
 
-/** Generates a sarcastic version of the text */
 function sarcasticText(input: string): string {
     return input
         .split("")
@@ -72,7 +67,6 @@ function sarcasticText(input: string): string {
         .join("");
 }
 
-/** Spam emojis at the text */
 function emojiSpam(input: string): string {
     const emoji = ["😂", "🔥", "💯", "😍", "😜", "🤣", "👌", "💀"];
     let output = input;
@@ -83,8 +77,8 @@ function emojiSpam(input: string): string {
 }
 
 export default definePlugin({
-    name: "BetterTextCommands",
-    description: "Fun and playful text-based commands like mock, reverse, spooky, and more.",
+    name: "MoreCommands2",
+    description: "Fun and playful text-based commands like mock, reverse, spooky, and more. [FIXED]",
     authors: [Devs.BX],
 
     commands: [
@@ -92,7 +86,6 @@ export default definePlugin({
             name: "mockcase",
             description: "Transforms your message to MoCk CaSe.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: toMockCase(findOption(opts, "message", ""))
             }),
@@ -101,7 +94,6 @@ export default definePlugin({
             name: "reverse",
             description: "Reverses your message.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: reverseText(findOption(opts, "message", ""))
             }),
@@ -110,7 +102,6 @@ export default definePlugin({
             name: "spooky",
             description: "Spookifies your text with weird characters.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: spookyText(findOption(opts, "message", ""))
             }),
@@ -119,7 +110,6 @@ export default definePlugin({
             name: "uwuify",
             description: "Makes your message cute and uwu.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: uwuifyText(findOption(opts, "message", ""))
             }),
@@ -128,7 +118,6 @@ export default definePlugin({
             name: "sarcastic",
             description: "Makes your message sarcastic.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: sarcasticText(findOption(opts, "message", ""))
             }),
@@ -137,7 +126,6 @@ export default definePlugin({
             name: "emoji-spam",
             description: "Spams your message with emojis.",
             options: [RequiredMessageOption],
-            inputType: ApplicationCommandInputType.BOT,
             execute: opts => ({
                 content: emojiSpam(findOption(opts, "message", ""))
             }),
