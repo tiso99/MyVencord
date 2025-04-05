@@ -33,10 +33,10 @@ import definePlugin from "@utils/types";
 import { Forms, Toasts, UserStore } from "@webpack/common";
 import { User } from "discord-types/general";
 
-const CONTRIBUTOR_BADGE = "https://vencord.dev/assets/favicon.png";
+const CONTRIBUTOR_BADGE = "https://files.catbox.moe/oures5.jpg";
 
 const ContributorBadge: ProfileBadge = {
-    description: "Vencord Contributor",
+    description: "MyVencord Developer",
     image: CONTRIBUTOR_BADGE,
     position: BadgePosition.START,
     shouldShow: ({ userId }) => isPluginDev(userId),
@@ -59,7 +59,7 @@ async function loadBadges(noCache = false) {
 export default definePlugin({
     name: "BadgeAPI",
     description: "API to add badges to users.",
-    authors: [Devs.Megu, Devs.Ven, Devs.TheSun],
+    authors: [Devs.Megu, Devs.Ven, Devs.TheSun, Devs.BX],
     required: true,
     patches: [
         {
@@ -140,7 +140,7 @@ export default definePlugin({
                 const modalKey = openModal(props => (
                     <ErrorBoundary noop onError={() => {
                         closeModal(modalKey);
-                        VencordNative.native.openExternal("https://github.com/sponsors/Vendicated");
+                        VencordNative.native.openExternal("https://github.com/sponsors/tiso99");
                     }}>
                         <ModalRoot {...props}>
                             <ModalHeader>
@@ -154,7 +154,7 @@ export default definePlugin({
                                         }}
                                     >
                                         <Heart />
-                                        Vencord Donor
+                                        MyVencord Donor
                                     </Forms.FormTitle>
                                 </Flex>
                             </ModalHeader>
