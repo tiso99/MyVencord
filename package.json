@@ -1,8 +1,8 @@
 {
-    "name": "vencord",
-    "private": "true",
+    "name": "myvencord",
+    "private": "false",
     "version": "1.11.9",
-    "description": "The cutest Discord client mod",
+    "description": "The cOOlest Discord client mod",
     "homepage": "https://github.com/tiso99/MyVencord#readme",
     "bugs": {
         "url": "https://github.com/tiso99/MyVencord/issues"
