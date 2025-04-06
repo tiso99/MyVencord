@@ -31,6 +31,7 @@ import { Alerts, Button, Card, Forms, Parser, React, Switch, Toasts } from "@web
 import gitHash from "~git-hash";
 
 import { handleSettingsTabError, SettingsTab, wrapTab } from "./shared";
+import packageJson from "../../../package.json";
 
 function withDispatcher(dispatcher: React.Dispatch<React.SetStateAction<boolean>>, action: () => any) {
     return async () => {
@@ -161,7 +162,7 @@ function Updatable(props: CommonProps) {
                         } else {
                             setUpdates([]);
                             Toasts.show({
-                                message: "No updates found! | Current: {}",
+                                message: `No updates found! | v${packageJson.version}, /MyVencord: ${gitHash}`,
                                 id: Toasts.genId(),
                                 type: Toasts.Type.MESSAGE,
                                 options: {
