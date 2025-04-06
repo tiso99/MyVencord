@@ -23,6 +23,7 @@ import { join } from "path";
 import { promisify } from "util";
 
 import { serializeErrors } from "./common";
+import { Logger } from "@utils/Logger";
 
 const VENCORD_SRC_DIR = join(__dirname, "..");
 
@@ -31,6 +32,8 @@ const execFile = promisify(cpExecFile);
 const isFlatpak = process.platform === "linux" && !!process.env.FLATPAK_ID;
 
 if (process.platform === "darwin") process.env.PATH = `/usr/local/bin:${process.env.PATH}`;
+
+const UpdateLogger = new Logger("Updater", "white");
 
 function git(...args: string[]) {
     const opts = { cwd: VENCORD_SRC_DIR };
@@ -47,14 +50,18 @@ async function getRepo() {
 }
 
 async function calculateGitChanges() {
+    UpdateLogger.info("Fetching latest changes from remote...");
     await git("fetch");
 
     const branch = (await git("branch", "--show-current")).stdout.trim();
+    UpdateLogger.info(`Current branch: ${branch}`);
 
     const existsOnOrigin = (await git("ls-remote", "origin", branch)).stdout.length > 0;
+    UpdateLogger.info(`Branch exists on origin: ${existsOnOrigin}`);
     if (!existsOnOrigin) return [];
 
     const res = await git("log", `HEAD...origin/${branch}`, "--pretty=format:%an/%h/%s");
+    UpdateLogger.info("Fetched commit logs:", res.stdout.trim());
 
     const commits = res.stdout.trim();
     return commits ? commits.split("\n").map(line => {
