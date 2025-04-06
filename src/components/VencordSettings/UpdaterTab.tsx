@@ -29,7 +29,6 @@ import { changes, checkForUpdates, getRepo, isNewer, update, updateError, Update
 import { Alerts, Button, Card, Forms, Parser, React, Switch, Toasts } from "@webpack/common";
 
 import gitHash from "~git-hash";
-import packageJson from "../../../package.json";
 
 import { handleSettingsTabError, SettingsTab, wrapTab } from "./shared";
 
@@ -162,7 +161,7 @@ function Updatable(props: CommonProps) {
                         } else {
                             setUpdates([]);
                             Toasts.show({
-                                message: `No updates found! | Current: ${packageJson.version}`,
+                                message: "No updates found! | Current: {}",
                                 id: Toasts.genId(),
                                 type: Toasts.Type.MESSAGE,
                                 options: {
