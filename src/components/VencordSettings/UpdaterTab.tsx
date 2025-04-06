@@ -29,7 +29,7 @@ import { changes, checkForUpdates, getRepo, isNewer, update, updateError, Update
 import { Alerts, Button, Card, Forms, Parser, React, Switch, Toasts } from "@webpack/common";
 
 import gitHash from "~git-hash";
-import packageJson from '../../../package.json';
+import packageJson from "../../../package.json";
 
 import { handleSettingsTabError, SettingsTab, wrapTab } from "./shared";
 
