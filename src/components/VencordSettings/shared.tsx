@@ -34,7 +34,7 @@ export function SettingsTab({ title, children }: PropsWithChildren<{ title: stri
                 tag="h2"
                 className={Margins.bottom16}
             >
-                {title}
+                MyVencord
             </Text>
 
             {children}

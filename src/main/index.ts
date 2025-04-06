@@ -28,8 +28,8 @@ if (IS_VESKTOP || !IS_VANILLA) {
     app.whenReady().then(() => {
         // Source Maps! Maybe there's a better way but since the renderer is executed
         // from a string I don't think any other form of sourcemaps would work
-        protocol.registerFileProtocol("vencord", ({ url: unsafeUrl }, cb) => {
-            let url = unsafeUrl.slice("vencord://".length);
+        protocol.registerFileProtocol("myvencord", ({ url: unsafeUrl }, cb) => {
+            let url = unsafeUrl.slice("myvencord://".length);
             if (url.endsWith("/")) url = url.slice(0, -1);
             if (url.startsWith("/themes/")) {
                 const theme = url.slice("/themes/".length);
@@ -58,8 +58,8 @@ if (IS_VESKTOP || !IS_VANILLA) {
         try {
             if (RendererSettings.store.enableReactDevtools)
                 installExt("fmkadmapgofadopljbjfkapdkoienihi")
-                    .then(() => console.info("[Vencord] Installed React Developer Tools"))
-                    .catch(err => console.error("[Vencord] Failed to install React Developer Tools", err));
+                    .then(() => console.info("[MyVencord] Installed React Developer Tools"))
+                    .catch(err => console.error("[MyVencord] Failed to install React Developer Tools", err));
         } catch { }
 
 
